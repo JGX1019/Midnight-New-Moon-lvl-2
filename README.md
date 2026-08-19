@@ -54,10 +54,10 @@ npm install --legacy-peer-deps
 # which hang indefinitely generating proofs on Apple Silicon under Docker Desktop)
 docker run --rm -p 6300:6300 midnightntwrk/proof-server:8.1.0
 
-# In Lace: set Proof server to Local (http://127.0.0.1:6300)
+# In your wallet's settings: set Proof server to Local (http://127.0.0.1:6300)
 
 npm run dev
-# Open http://localhost:5173, connect Lace, and deploy or join a contract
+# Open http://localhost:5173, connect your wallet, and deploy or join a contract
 ```
 
 ## Run Tests
@@ -80,7 +80,7 @@ vercel --prod
 
 ## Demo Video
 
-[PLACEHOLDER — will be added after recording]
+https://www.tella.tv/video/midnight-risein-level-2-0n0i
 
 ## Project Structure
 
@@ -89,10 +89,10 @@ contracts/counter.compact       — the Compact contract (same as Level 1)
 managed/counter/                 — compiler output (ZK keys, zkir, compiled JS)
 public/managed/counter/          — ZK keys/zkir copied here for the browser to fetch at runtime
 src/contract/counter.js          — compiled contract JS, statically imported by the frontend
-src/hooks/useMidnight.ts         — Lace wallet connect/disconnect hook
+src/hooks/useMidnight.ts         — wallet connect/disconnect hook (any Midnight-compatible wallet)
 src/components/WalletConnect.tsx — wallet connect/disconnect UI
 src/components/CircuitCall.tsx   — deploy/join + circuit call UI
-src/api/providers.ts             — browser-side midnight-js providers backed by Lace
+src/api/providers.ts             — browser-side midnight-js providers backed by the connected wallet
 src/api/contract.ts              — deploy/join + typed circuit call helpers
 src/network.ts, src/wallet.ts, src/deploy.ts — Level 1's Node.js CLI deploy path (kept for reference)
 tests/counter.test.ts            — contract test suite
@@ -100,4 +100,4 @@ tests/counter.test.ts            — contract test suite
 
 ## Note on deployment path
 
-This contract was deployed to Preprod **from the frontend** (via a connected Lace wallet), not via the Node.js CLI script (`src/deploy.ts`). The CLI path builds its own wallet and syncs it directly against the public indexer, which proved unreliable against Preprod during development (the wallet-sdk's sync stream has no internal retry and can stall indefinitely on a transient indexer hiccup). The frontend path sidesteps this entirely — Lace owns wallet sync internally as a long-running browser extension, so the dApp never opens its own raw indexer subscription.
+This contract was deployed to Preprod **from the frontend** (via a connected wallet), not via the Node.js CLI script (`src/deploy.ts`). The CLI path builds its own wallet and syncs it directly against the public indexer, which proved unreliable against Preprod during development (the wallet-sdk's sync stream has no internal retry and can stall indefinitely on a transient indexer hiccup). The frontend path sidesteps this entirely — the connected wallet owns its own sync internally as a long-running browser extension, so the dApp never opens its own raw indexer subscription.
