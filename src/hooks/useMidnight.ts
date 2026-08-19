@@ -64,15 +64,16 @@ export function useMidnight(): UseMidnightResult {
     const midnightApis = await waitForWalletInjection();
     if (!midnightApis) {
       setStatus('error');
-      setError('No Midnight-compatible wallet found. Install the Lace wallet extension and reload.');
+      setError('No Midnight-compatible wallet found. Install a Midnight wallet extension (such as Lace) and reload.');
       return;
     }
 
-    // Prefer Lace if present under its known key, otherwise take the first injected wallet.
+    // Prefer Lace if present under its known key, otherwise take the first injected wallet
+    // — any wallet implementing the Midnight DApp Connector API works here.
     const initialAPI = midnightApis.mnLace ?? Object.values(midnightApis)[0];
     if (!initialAPI) {
       setStatus('error');
-      setError('No Midnight-compatible wallet found. Install the Lace wallet extension and reload.');
+      setError('No Midnight-compatible wallet found. Install a Midnight wallet extension (such as Lace) and reload.');
       return;
     }
 

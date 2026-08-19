@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-[PASTE LIVE URL AFTER DEPLOYING FRONTEND]
+https://midnight-new-moon-lvl-2.vercel.app/
 
 ## Contract Address
 
@@ -15,7 +15,7 @@
 
 ## What This Does
 
-This is a small dApp built on top of the `counter.compact` contract from Level 1. Connect a Lace wallet, deploy or join a counter contract, and call `increment` with a private amount. The proof that the increment is valid is generated entirely in your browser (via Lace), and only the public result — the new count and the transaction id — is ever submitted on-chain or shown in the UI.
+This is a small dApp built on top of the `counter.compact` contract from Level 1. Connect any Midnight-compatible wallet (e.g. Lace), deploy or join a counter contract, and call `increment` with a private amount. The proof that the increment is valid is generated entirely in your browser via the connected wallet, and only the public result — the new count and the transaction id — is ever submitted on-chain or shown in the UI.
 
 ## Privacy Model
 
@@ -32,14 +32,14 @@ An on-chain observer watching this contract sees: the contract address, the publ
 - Midnight Network (Preprod / Preview)
 - Compact — ZK smart contract language
 - Midnight.js SDK (`midnight-js-contracts` v4.1.1)
-- DApp Connector API (`@midnight-ntwrk/dapp-connector-api`)
+- DApp Connector API (`@midnight-ntwrk/dapp-connector-api`) — works with any Midnight-compatible wallet
 - React 19 + Vite 6
-- Lace Wallet
+- Lace Wallet (reference wallet used during development)
 
 ## Prerequisites
 
-- [Lace wallet](https://chromewebstore.google.com/detail/lace/gafhhkghbfjjkeiendhlofajokpaflmk) browser extension, set to the **Preprod** network
-- In Lace: **Settings → Proof server → Local** (`http://127.0.0.1:6300`) — proofs are generated locally in the browser via Lace, and Lace needs a running local proof server to do that
+- A Midnight-compatible wallet browser extension (e.g. [Lace](https://chromewebstore.google.com/detail/lace/gafhhkghbfjjkeiendhlofajokpaflmk)), set to the **Preprod** network
+- In your wallet's settings: **Proof server → Local** (`http://127.0.0.1:6300`) — proofs are generated locally in the browser via the connected wallet, which needs a running local proof server to do that
 - Docker Desktop running (for the local proof server)
 - Node.js v22+
 

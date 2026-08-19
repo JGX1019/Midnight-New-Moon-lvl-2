@@ -1,5 +1,5 @@
 /**
- * WalletConnect.tsx — connect/disconnect UI for the Lace wallet.
+ * WalletConnect.tsx — connect/disconnect UI for any Midnight-compatible wallet.
  *
  * Shows:
  *  - a Connect button when disconnected
@@ -19,7 +19,7 @@ export function WalletConnect({ status, address, error, connect, disconnect }: U
     <div className="wallet-connect">
       {status === 'disconnected' && (
         <button onClick={connect} className="btn btn-primary">
-          Connect Lace Wallet
+          Connect Midnight Wallet
         </button>
       )}
 

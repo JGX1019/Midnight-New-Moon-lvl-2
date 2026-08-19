@@ -21,7 +21,7 @@ export function App() {
         )}
 
         {midnight.status !== 'connected' && (
-          <p className="hint">Connect your Lace wallet to deploy or interact with the counter contract.</p>
+          <p className="hint">Connect any Midnight-compatible wallet to deploy or interact with the counter contract.</p>
         )}
       </main>
     </div>
