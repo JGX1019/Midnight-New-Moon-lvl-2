@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0b0b12;
+  color: #e8e8f0;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.app-header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.tagline {
+  color: #9a9ab0;
+  margin-top: 0;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #6c5ce7;
+  color: white;
+}
+
+.btn-secondary {
+  background: #2a2a3a;
+  color: #e8e8f0;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.wallet-connect {
+  margin: 1.5rem 0;
+}
+
+.wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.wallet-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  display: inline-block;
+}
+
+.wallet-address {
+  font-family: monospace;
+  background: #1a1a26;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.wallet-error {
+  color: #ff6b6b;
+}
+
+.circuit-call {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+}
+
+.join-contract {
+  margin-top: 1.5rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #3a3a4a;
+  background: #1a1a26;
+  color: #e8e8f0;
+  margin-right: 0.5rem;
+}
+
+.contract-address {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #9a9ab0;
+  word-break: break-all;
+}
+
+.public-count {
+  font-size: 1.2rem;
+}
+
+.increment-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.privacy-label {
+  color: #6c5ce7;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tx-status {
+  color: #f1c40f;
+}
+
+.tx-result {
+  color: #2ecc71;
+}
+
+.tx-id {
+  font-family: monospace;
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+
+.error-text {
+  color: #ff6b6b;
+}
+
+.hint {
+  color: #9a9ab0;
+}
